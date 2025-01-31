@@ -40,8 +40,8 @@ class Admin extends Module {
 
 	public function setting_section() {
 		?>
-		<p><?php esc_html_e( 'Select permalink setting.' ); ?>
-			<?php echo wp_kses_post( 'Available tags are <code>%post_id%</code>, <code>%postname%</code>, <code>%year%</code>, <code>%monthnum%</code>, <code>%1$day%</code>, <code>%hour%</code>, <code>%minute%</code>, <code>%2$second%</code>, <code>%author%</code>.' ); ?></p>
+		<p><?php esc_html_e( 'Select permalink setting.', 'simple-post-type-permalinks' ); ?>
+			<?php echo wp_kses_post(__( 'Available tags are <code>%post_id%</code>, <code>%postname%</code>, <code>%year%</code>, <code>%monthnum%</code>, <code>%day%</code>, <code>%hour%</code>, <code>%minute%</code>, <code>%second%</code>, <code>%author%</code>.', 'simple-post-type-permalinks' )); ?></p>
 
 		<?php
 
@@ -148,7 +148,7 @@ class Admin extends Module {
 						?><span class="slash"><?php echo esc_attr( $slash ); ?></span></code>
 						<?php
 					else : ?>
-						Default.
+						<?php esc_html_e( 'Default.', 'simple-post-type-permalinks' ); ?>
 						<?php
 					endif; ?>
 
